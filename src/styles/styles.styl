@@ -2,6 +2,9 @@ html
   font-family 'Minecraft'
   font-size 32px
 
+  --background white
+  --foreground black
+
   @media screen and (max-width 500px)
     font-size 24px
 
@@ -11,6 +14,9 @@ body
   flex-direction column
   justify-content center
   align-items center
+
+  background-color var(--background)
+  color var(--foreground)
 
 p
   margin 0
