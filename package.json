@@ -34,5 +34,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.3.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.1"
   }
 }
