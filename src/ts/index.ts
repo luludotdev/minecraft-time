@@ -2,6 +2,7 @@ import copy from 'copy-to-clipboard'
 
 import '../styles/fonts.styl'
 import '../styles/styles.styl'
+import './tooltip'
 
 const time = document.getElementById('time')
 if (time === null) throw new Error('Time element is null!')
