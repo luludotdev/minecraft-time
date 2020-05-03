@@ -5,5 +5,33 @@
   "repository": "git@github.com:lolPants/minecraft-time.git",
   "author": "Jack Baron <jackmbaron@gmail.com> (https://www.jackbaron.com)",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "check": "tsc --noEmit",
+    "test": "yarn run check && yarn run lint",
+    "dev": "parcel ./src/index.html",
+    "clean": "rimraf .cache dist",
+    "build": "parcel build ./src/index.html",
+    "build:prod": "yarn run clean && parcel build --no-source-maps ./src/index.html"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/runtime": "^7.9.6",
+    "@types/parcel-env": "^0.0.0",
+    "autoprefixer": "^9.7.6",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-subresource-integrity": "^0.3.4",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "stylus": "^0.54.7",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^3.8.3"
+  }
 }
