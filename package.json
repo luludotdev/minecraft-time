@@ -13,7 +13,8 @@
     "dev": "parcel ./src/index.html",
     "clean": "rimraf .cache dist",
     "build": "parcel build ./src/index.html",
-    "build:prod": "yarn run clean && parcel build --no-source-maps ./src/index.html"
+    "build:prod": "yarn run clean && parcel build --no-source-maps ./src/index.html",
+    "now-build": "yarn run build:prod"
   },
   "engines": {
     "node": ">=10.0.0"
