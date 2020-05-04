@@ -5,6 +5,7 @@ import '../styles/sky.styl'
 import '../styles/styles.styl'
 import '../styles/tooltip.styl'
 
+import './stars'
 import { getTime, time } from './time'
 import './tooltip'
 
