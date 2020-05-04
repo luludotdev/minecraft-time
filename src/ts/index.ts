@@ -1,6 +1,7 @@
 import copy from 'copy-to-clipboard'
 
 import '../styles/fonts.styl'
+import '../styles/sky.styl'
 import '../styles/styles.styl'
 import '../styles/tooltip.styl'
 

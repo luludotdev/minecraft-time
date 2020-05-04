@@ -1,0 +1,40 @@
+day()
+  $day-top = #7eabff
+  $day-bottom = #c0d8ff
+
+  color black
+  background-image linear-gradient($day-top 10%, $day-bottom 20%, $day-bottom 100%)
+
+night()
+  $night-top = #010103
+  $night-bottom = #0c0d17
+
+  color white
+  background-image linear-gradient($night-top 10%, $night-bottom 40%, $night-bottom 100%)
+
+dusk()
+  $dusk-top = #38415e
+  $dusk-bottom = #cf5335
+
+  color #ffff7e
+  background-image linear-gradient($dusk-top 10%, $dusk-bottom 50%, $dusk-bottom 100%)
+
+dawn()
+  $dawn-top = #586fa1
+  $dawn-bottom = #db753a
+
+  color #ffe
+  background-image linear-gradient($dawn-top 10%, $dawn-bottom 50%, $dawn-bottom 100%)
+
+html
+  &.day
+    day()
+
+  &.night
+    night()
+
+  &.dusk
+    dusk()
+
+  &.dawn
+    dawn()
