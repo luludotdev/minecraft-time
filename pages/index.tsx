@@ -1,6 +1,7 @@
+import copy from 'copy-to-clipboard'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import { useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Fonts } from '~components/Fonts'
 import { Time } from '~components/Time'
 import { getTime } from '~lib/hooks/useTicks'
@@ -11,11 +12,25 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ now }) => {
+  const copyTextCopy = 'Copy to Clipboard'
+  const copyTextCopied = 'Copied!'
+
+  const [copyText, setCopyText] = useState(copyTextCopy)
   const timeRef = useRef<HTMLParagraphElement>(null)
-  const timeTooltip = useTooltip('Copy to Clipboard', timeRef)
+  const timeTooltip = useTooltip(copyText, timeRef)
 
   const linkRef = useRef<HTMLAnchorElement>(null)
   const linkTooltip = useTooltip('lolPants/minecraft-time', linkRef)
+
+  const handleClick = useCallback(() => {
+    const now = getTime()
+    copy(now)
+
+    setCopyText(copyTextCopied)
+    setTimeout(() => {
+      setCopyText(copyTextCopy)
+    }, 750)
+  }, [])
 
   return (
     <>
@@ -68,7 +83,7 @@ const Home: NextPage<Props> = ({ now }) => {
       </Head>
 
       <p>The time is currently</p>
-      <p ref={timeRef} className='time'>
+      <p ref={timeRef} className='time' onClick={handleClick}>
         <Time initial={now} />
       </p>
       <p>in Minecraft ticks.</p>
