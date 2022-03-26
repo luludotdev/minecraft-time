@@ -131,27 +131,39 @@ export const Background: FC<Props> = ({ time }) => {
         }
 
         body.day {
-          color: var(--day-text);
-          background-image: var(--day);
+          --text-colour: var(--day-text);
           --stars: var(--day-stars);
+
+          background-image: var(--day);
         }
 
         body.night {
-          color: var(--night-text);
-          background-image: var(--night);
+          --text-colour: var(--night-text);
           --stars: var(--night-stars);
+
+          background-image: var(--night);
         }
 
         body.dusk {
-          color: var(--dusk-text);
-          background-image: var(--dusk);
+          --text-colour: var(--dusk-text);
           --stars: var(--dusk-stars);
+
+          background-image: var(--dusk);
         }
 
         body.dawn {
-          color: var(--dawn-text);
-          background-image: var(--dawn);
+          --text-colour: var(--dawn-text);
           --stars: var(--dawn-stars);
+
+          background-image: var(--dawn);
+        }
+
+        body {
+          color: var(--text-colour, black);
+        }
+
+        [data-theme='dark'] body {
+          color: var(--text-colour, white);
         }
       `}</style>
 

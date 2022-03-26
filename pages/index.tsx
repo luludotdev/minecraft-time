@@ -68,7 +68,7 @@ const Home: NextPage<Props> = ({ now }) => {
         }
 
         a {
-          color: inherit;
+          color: var(--text-colour);
         }
 
         div.source {
@@ -83,7 +83,7 @@ const Home: NextPage<Props> = ({ now }) => {
         <title>Time in Minecraft Ticks</title>
       </Head>
 
-      <Background time='day' />
+      <Background />
 
       <p>The time is currently</p>
       <p ref={timeRef} className='time' onClick={handleClick}>
