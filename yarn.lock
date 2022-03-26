@@ -2646,26 +2646,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mc-tyime@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "mc-tyime@workspace:."
-  dependencies:
-    "@types/node": 17.0.23
-    "@types/react": 17.0.43
-    "@types/react-dom": 17.0.14
-    clsx: ^1.1.1
-    eslint-config-next: 12.1.1
-    eslint-config-xo-react: ^0.27.0
-    eslint-plugin-react: ^7.29.4
-    eslint-plugin-react-hooks: ^4.3.0
-    next: 12.1.1
-    react: 17.0.2
-    react-dom: 17.0.2
-    typescript: 4.6.3
-    xo: ^0.48.0
-  languageName: unknown
-  linkType: soft
-
 "memory-fs@npm:^0.2.0":
   version: 0.2.0
   resolution: "memory-fs@npm:0.2.0"
@@ -2737,6 +2717,26 @@ __metadata:
   checksum: bfc6dd03c5eaf623a4963ebd94d087f6f4bbbfd8c41329a7f09706b0cb66969c4ddd336abeb587bc44bc6f08e13bf90f0b374f9d71f9f01e04adc2cd6f083ef1
   languageName: node
   linkType: hard
+
+"minecraft-time@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "minecraft-time@workspace:."
+  dependencies:
+    "@types/node": 17.0.23
+    "@types/react": 17.0.43
+    "@types/react-dom": 17.0.14
+    clsx: ^1.1.1
+    eslint-config-next: 12.1.1
+    eslint-config-xo-react: ^0.27.0
+    eslint-plugin-react: ^7.29.4
+    eslint-plugin-react-hooks: ^4.3.0
+    next: 12.1.1
+    react: 17.0.2
+    react-dom: 17.0.2
+    typescript: 4.6.3
+    xo: ^0.48.0
+  languageName: unknown
+  linkType: soft
 
 "minimatch@npm:^3.0.4, minimatch@npm:^3.1.2":
   version: 3.1.2
