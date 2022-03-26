@@ -24,10 +24,12 @@ const getSkyState: (
 
 export const useLocation = () => {
   const [sky, setSky] = useState<Sky | undefined>(undefined)
-  const [enabled, setEnabled] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false
-    return Boolean(localStorage.getItem(STORAGE_KEY))
-  })
+  const [enabled, setEnabled] = useState<boolean>(false)
+
+  useEffect(() => {
+    const isEnabled = Boolean(localStorage.getItem(STORAGE_KEY))
+    setEnabled(isEnabled)
+  }, [])
 
   const toggleEnabled = useCallback(() => {
     const toggled = !enabled
