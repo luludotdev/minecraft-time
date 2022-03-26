@@ -2,6 +2,7 @@ import copy from 'copy-to-clipboard'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useCallback, useRef, useState } from 'react'
+import { Background } from '~components/Background'
 import { Fonts } from '~components/Fonts'
 import { Time } from '~components/Time'
 import { getTime } from '~lib/hooks/useTicks'
@@ -81,6 +82,8 @@ const Home: NextPage<Props> = ({ now }) => {
       <Head>
         <title>Time in Minecraft Ticks</title>
       </Head>
+
+      <Background time='day' />
 
       <p>The time is currently</p>
       <p ref={timeRef} className='time' onClick={handleClick}>

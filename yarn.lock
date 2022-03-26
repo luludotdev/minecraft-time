@@ -2741,6 +2741,7 @@ __metadata:
     eslint-plugin-react: ^7.29.4
     eslint-plugin-react-hooks: ^4.3.0
     next: 12.1.1
+    next-themes: ^0.1.1
     react: 17.0.2
     react-dom: 17.0.2
     typescript: 4.6.3
@@ -2809,6 +2810,17 @@ __metadata:
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
   checksum: 23ad088b08f898fc9b53011d7bb78ec48e79de7627e01ab5518e806033861bef68d5b0cd0e2205c2f36690ac9571ff6bcb05eb777ced2eeda8d4ac5b44592c3d
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "next-themes@npm:0.1.1"
+  peerDependencies:
+    next: ">=11.1.1"
+    react: "*"
+    react-dom: "*"
+  checksum: 226f6af92f3ccccd23c21cd0605aee4fef3482fb8442957a8bae220051af587b63b9fa0b1c8c1c859a7f60b7c8380ebcec98adb3575c903611251917846215e4
   languageName: node
   linkType: hard
 
