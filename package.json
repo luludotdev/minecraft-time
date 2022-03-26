@@ -1,43 +1,24 @@
 {
-  "name": "minecraft-time",
+  "name": "mc-tyime",
   "version": "0.1.0",
-  "main": "index.js",
-  "repository": "git@github.com:lolPants/minecraft-time.git",
-  "author": "Jack Baron <jackmbaron@gmail.com> (https://www.jackbaron.com)",
-  "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "check": "tsc --noEmit",
-    "test": "yarn run check && yarn run lint",
-    "dev": "parcel ./src/index.html",
-    "clean": "rimraf .cache dist",
-    "build": "parcel build ./src/index.html",
-    "build:prod": "yarn run clean && parcel build --no-source-maps ./src/index.html",
-    "now-build": "yarn run build:prod"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/runtime": "^7.9.6",
-    "@types/parcel-env": "^0.0.0",
-    "@types/suncalc": "^1.8.0",
-    "autoprefixer": "^9.7.6",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-subresource-integrity": "^0.3.4",
-    "prettier": "^2.0.5",
-    "rimraf": "^3.0.2",
-    "stylus": "^0.54.7",
-    "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.3.0",
-    "typescript": "^3.8.3"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "copy-to-clipboard": "^3.3.1",
-    "suncalc": "^1.8.0"
+    "next": "12.1.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.23",
+    "@types/react": "17.0.43",
+    "@types/react-dom": "17.0.14",
+    "eslint": "8.12.0",
+    "eslint-config-next": "12.1.1",
+    "typescript": "4.6.3"
   }
 }
