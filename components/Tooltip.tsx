@@ -27,7 +27,7 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>(
           color: white;
           background-color: var(--colour-bg);
 
-          font-size: 16px;
+          font-size: var(--font-size);
           padding: calc(var(--spacing) * 3);
 
           white-space: nowrap;
