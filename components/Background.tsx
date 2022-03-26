@@ -4,12 +4,13 @@ const randRange = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+export type Sky = 'day' | 'night' | 'dusk' | 'dawn'
 interface Props {
-  time?: 'day' | 'night' | 'dusk' | 'dawn'
+  sky?: Sky
   children?: never
 }
 
-export const Background: FC<Props> = ({ time }) => {
+export const Background: FC<Props> = ({ sky }) => {
   const ref = useRef<HTMLCanvasElement>(null)
   const render = useCallback(() => {
     const canvas = ref.current
@@ -73,13 +74,13 @@ export const Background: FC<Props> = ({ time }) => {
     render()
 
     window.addEventListener('resize', render)
-    if (time) document.body.classList.add(time)
+    if (sky) document.body.classList.add(sky)
 
     return () => {
       window.removeEventListener('resize', render)
-      if (time) document.body.classList.remove(time)
+      if (sky) document.body.classList.remove(sky)
     }
-  }, [time, render])
+  }, [sky, render])
 
   return (
     <>

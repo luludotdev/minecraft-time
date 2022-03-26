@@ -4,7 +4,9 @@ import Head from 'next/head'
 import { useCallback, useRef, useState } from 'react'
 import { Background } from '~components/Background'
 import { Fonts } from '~components/Fonts'
+import { LocationPrompt } from '~components/LocationPrompt'
 import { Time } from '~components/Time'
+import { useLocation } from '~lib/hooks/useLocation'
 import { getTime } from '~lib/hooks/useTicks'
 import { useTooltip } from '~lib/hooks/useTooltip'
 
@@ -32,6 +34,8 @@ const Home: NextPage<Props> = ({ now }) => {
       setCopyText(copyTextCopy)
     }, 750)
   }, [])
+
+  const { enabled, sky, toggleEnabled } = useLocation()
 
   return (
     <>
@@ -83,7 +87,8 @@ const Home: NextPage<Props> = ({ now }) => {
         <title>Time in Minecraft Ticks</title>
       </Head>
 
-      <Background />
+      <LocationPrompt enabled={enabled} onClick={toggleEnabled} />
+      <Background sky={sky} />
 
       <p>The time is currently</p>
       <p ref={timeRef} className='time' onClick={handleClick}>
