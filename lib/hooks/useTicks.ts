@@ -1,5 +1,5 @@
 import { type RefObject } from 'react'
-import { useAnimationFrame } from './useAnimationFrame'
+import { useAnimationFrame } from '~/lib/hooks/useAnimationFrame'
 
 // Earliest recorded Minecraft version
 // May 10, 2009

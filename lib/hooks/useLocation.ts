@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { getTimes } from 'suncalc'
-import { Sky } from '~components/Background'
+import { type Sky } from '~/components/Background'
 
 const STORAGE_KEY = 'location'
 

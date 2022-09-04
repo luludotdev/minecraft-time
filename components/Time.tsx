@@ -1,5 +1,5 @@
 import { type FC, useRef } from 'react'
-import { useTicks } from '~lib/hooks/useTicks'
+import { useTicks } from '~/lib/hooks/useTicks'
 
 interface Props {
   initial?: string

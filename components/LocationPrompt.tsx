@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import css from 'styled-jsx/css'
-import { LocationDot } from './LocationDot'
-import { LocationDotSlash } from './LocationDotSlash'
+import { LocationDot } from '~/components/LocationDot'
+import { LocationDotSlash } from '~/components/LocationDotSlash'
 
 const { className, styles } = css.resolve`
   svg {

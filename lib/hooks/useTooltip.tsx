@@ -1,6 +1,6 @@
 import { type RefObject, useCallback, useEffect, useRef, useState } from 'react'
-import { Tooltip } from '~components/Tooltip'
-import { useAnimationFrame } from './useAnimationFrame'
+import { Tooltip } from '~/components/Tooltip'
+import { useAnimationFrame } from '~/lib/hooks/useAnimationFrame'
 
 export const useTooltip = (text: string, ref: RefObject<HTMLElement>) => {
   const [shown, setShown] = useState(false)
