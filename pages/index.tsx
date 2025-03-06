@@ -1,47 +1,47 @@
-import copy from 'copy-to-clipboard'
-import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
-import { useCallback, useRef, useState } from 'react'
-import { Background } from '~/components/Background'
-import { Fonts } from '~/components/Fonts'
-import { LocationPrompt } from '~/components/LocationPrompt'
-import { Time } from '~/components/Time'
-import { useLocation } from '~/lib/hooks/useLocation'
-import { getTime } from '~/lib/hooks/useTicks'
-import { useTooltip } from '~/lib/hooks/useTooltip'
+import copy from "copy-to-clipboard";
+import type { GetServerSideProps, NextPage } from "next";
+import Head from "next/head";
+import { useCallback, useRef, useState } from "react";
+import { Background } from "~/components/Background";
+import { Fonts } from "~/components/Fonts";
+import { LocationPrompt } from "~/components/LocationPrompt";
+import { Time } from "~/components/Time";
+import { useLocation } from "~/lib/hooks/useLocation";
+import { getTime } from "~/lib/hooks/useTicks";
+import { useTooltip } from "~/lib/hooks/useTooltip";
 
 interface Props {
-  now: string
+  now: string;
 }
 
 const Home: NextPage<Props> = ({ now }) => {
-  const copyTextCopy = 'Copy to Clipboard'
-  const copyTextCopied = 'Copied!'
+  const copyTextCopy = "Copy to Clipboard";
+  const copyTextCopied = "Copied!";
 
-  const [copyText, setCopyText] = useState(copyTextCopy)
-  const timeRef = useRef<HTMLParagraphElement>(null)
-  const timeTooltip = useTooltip(copyText, timeRef)
+  const [copyText, setCopyText] = useState(copyTextCopy);
+  const timeRef = useRef<HTMLParagraphElement>(null);
+  const timeTooltip = useTooltip(copyText, timeRef);
 
-  const linkRef = useRef<HTMLAnchorElement>(null)
-  const linkTooltip = useTooltip('lolPants/minecraft-time', linkRef)
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const linkTooltip = useTooltip("lolPants/minecraft-time", linkRef);
 
   const handleClick = useCallback(() => {
-    const now = getTime()
-    copy(now)
+    const now = getTime();
+    copy(now);
 
-    setCopyText(copyTextCopied)
+    setCopyText(copyTextCopied);
     setTimeout(() => {
-      setCopyText(copyTextCopy)
-    }, 750)
-  }, [])
+      setCopyText(copyTextCopy);
+    }, 750);
+  }, []);
 
-  const { enabled, sky, toggleEnabled } = useLocation()
+  const { enabled, sky, toggleEnabled } = useLocation();
 
   return (
     <>
       <Fonts />
 
-      <style jsx global>{`
+      <style global jsx>{`
         html,
         body {
           width: 100%;
@@ -91,18 +91,18 @@ const Home: NextPage<Props> = ({ now }) => {
       <Background sky={sky} />
 
       <p>The time is currently</p>
-      <p ref={timeRef} className='time' onClick={handleClick}>
+      <p className="time" onClick={handleClick} ref={timeRef}>
         <Time initial={now} />
       </p>
       <p>in Minecraft ticks.</p>
 
-      <div className='source'>
-        View on{' '}
+      <div className="source">
+        View on{" "}
         <a
+          href="https://github.com/lolPants/minecraft-time"
           ref={linkRef}
-          href='https://github.com/lolPants/minecraft-time'
-          target='_blank'
-          rel='noopener noreferrer'
+          rel="noopener noreferrer"
+          target="_blank"
         >
           GitHub
         </a>
@@ -111,13 +111,11 @@ const Home: NextPage<Props> = ({ now }) => {
       {timeTooltip}
       {linkTooltip}
     </>
-  )
-}
+  );
+};
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  return {
-    props: { now: getTime() },
-  }
-}
+export const getServerSideProps: GetServerSideProps<Props> = async () => ({
+  props: { now: getTime() },
+});
 
-export default Home
+export default Home;

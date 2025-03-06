@@ -1,7 +1,7 @@
-import { type FC } from 'react'
-import css from 'styled-jsx/css'
-import { LocationDot } from '~/components/LocationDot'
-import { LocationDotSlash } from '~/components/LocationDotSlash'
+import type { FC } from "react";
+import css from "styled-jsx/css";
+import { LocationDot } from "~/components/LocationDot";
+import { LocationDotSlash } from "~/components/LocationDotSlash";
 
 const { className, styles } = css.resolve`
   svg {
@@ -26,13 +26,13 @@ const { className, styles } = css.resolve`
   svg.enabled {
     color: red;
   }
-`
+`;
 
 interface Props {
-  enabled: boolean
-  onClick: () => void
+  readonly enabled: boolean;
+  readonly onClick: () => void;
 
-  children?: never
+  readonly children?: never;
 }
 
 export const LocationPrompt: FC<Props> = ({ enabled, onClick }) => (
@@ -50,22 +50,22 @@ export const LocationPrompt: FC<Props> = ({ enabled, onClick }) => (
       }
     `}</style>
 
-    <div className='container'>
+    <div className="container">
       {enabled ? (
         <LocationDotSlash
           className={className}
-          title='Disable location-based background'
           onClick={onClick}
+          title="Disable location-based background"
         />
       ) : (
         <LocationDot
           className={className}
-          title='Enable location-based background'
           onClick={onClick}
+          title="Enable location-based background"
         />
       )}
     </div>
 
     {styles}
   </>
-)
+);

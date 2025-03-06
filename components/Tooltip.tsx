@@ -1,9 +1,9 @@
-import clsx from 'clsx'
-import { forwardRef } from 'react'
+import clsx from "clsx";
+import { forwardRef } from "react";
 
 interface Props {
-  text: string
-  hidden: boolean
+  readonly text: string;
+  readonly hidden: boolean;
 }
 
 export const Tooltip = forwardRef<HTMLDivElement, Props>(
@@ -43,7 +43,7 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>(
         }
 
         div::before {
-          content: '';
+          content: "";
           position: absolute;
           pointer-events: none;
 
@@ -58,7 +58,7 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>(
         }
 
         div::after {
-          content: '';
+          content: "";
           position: absolute;
           pointer-events: none;
 
@@ -72,9 +72,9 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>(
         }
       `}</style>
 
-      <div ref={ref} className={clsx(hidden && 'hidden')}>
+      <div className={clsx(hidden && "hidden")} ref={ref}>
         {text}
       </div>
     </>
-  )
-)
+  ),
+);
