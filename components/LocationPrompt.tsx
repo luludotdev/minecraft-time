@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import css from "styled-jsx/css";
 import { LocationDot } from "~/components/LocationDot";
 import { LocationDotSlash } from "~/components/LocationDotSlash";
@@ -28,14 +27,13 @@ const { className, styles } = css.resolve`
   }
 `;
 
-interface Props {
-  readonly enabled: boolean;
+export const LocationPrompt = ({
+  isEnabled,
+  onClick,
+}: {
+  readonly isEnabled: boolean;
   readonly onClick: () => void;
-
-  readonly children?: never;
-}
-
-export const LocationPrompt: FC<Props> = ({ enabled, onClick }) => (
+}) => (
   <>
     <style jsx>{`
       div.container {
@@ -51,7 +49,7 @@ export const LocationPrompt: FC<Props> = ({ enabled, onClick }) => (
     `}</style>
 
     <div className="container">
-      {enabled ? (
+      {isEnabled ? (
         <LocationDotSlash
           className={className}
           onClick={onClick}

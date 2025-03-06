@@ -6,7 +6,7 @@ import { useAnimationFrame } from "~/lib/hooks/useAnimationFrame";
 const MINECRAFT_EPOCH = 1_241_910_000_000;
 export const getTime = () => ((Date.now() - MINECRAFT_EPOCH) / 50).toFixed(0);
 
-export const useTicks = (ref: RefObject<HTMLSpanElement>) => {
+export const useTicks = (ref: RefObject<HTMLSpanElement | null>) => {
   useAnimationFrame(() => {
     if (ref.current) {
       ref.current.innerHTML = getTime();

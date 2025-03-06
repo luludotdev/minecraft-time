@@ -3,7 +3,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Tooltip } from "~/components/Tooltip";
 import { useAnimationFrame } from "~/lib/hooks/useAnimationFrame";
 
-export const useTooltip = (text: string, ref: RefObject<HTMLElement>) => {
+export const useTooltip = (
+  text: string,
+  ref: RefObject<HTMLElement | null>,
+) => {
   const [shown, setShown] = useState(false);
   const coords = useRef({ x: 0, y: 0 });
   const tooltipRef = useRef<HTMLDivElement>(null);

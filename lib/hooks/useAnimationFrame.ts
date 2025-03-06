@@ -7,7 +7,7 @@ export const useAnimationFrame = (
   /* eslint-disable react-hooks/rules-of-hooks */
   if (typeof window === "undefined") return;
 
-  const frame = useRef<number>();
+  const frame = useRef<number | undefined>(undefined);
   const last = useRef(performance.now());
   const init = useRef(performance.now());
 
@@ -16,6 +16,7 @@ export const useAnimationFrame = (
     const time = (now - init.current) / 1_000;
     const delta = (now - last.current) / 1_000;
 
+    // eslint-disable-next-line promise/prefer-await-to-callbacks, n/callback-return
     cb({ time, delta });
     last.current = now;
     frame.current = requestAnimationFrame(animate);

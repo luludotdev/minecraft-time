@@ -1,6 +1,4 @@
-import type { FC } from "react";
-
-export const Fonts: FC<{ children?: never }> = () => (
+export const Fonts = () => (
   <style global jsx>{`
     @font-face {
       font-family: "Minecraft";

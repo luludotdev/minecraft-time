@@ -1,16 +1,16 @@
-import type { FC } from "react";
 import { useCallback, useEffect, useRef } from "react";
 
 const randRange = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
 export type Sky = "dawn" | "day" | "dusk" | "night";
-interface Props {
+
+export const Background = ({
+  sky,
+}: {
   readonly sky?: Sky;
   readonly children?: never;
-}
-
-export const Background: FC<Props> = ({ sky }) => {
+}) => {
   const ref = useRef<HTMLCanvasElement>(null);
   const render = useCallback(() => {
     const canvas = ref.current;
@@ -62,7 +62,7 @@ export const Background: FC<Props> = ({ sky }) => {
     };
 
     const offset = 100;
-    for (let i = 0; i < randRange(50, 100); i++) {
+    for (let idx = 0; idx < randRange(50, 100); idx++) {
       const x = randRange(-1 * offset, canvas.width + offset);
       const y = randRange(-1 * offset, canvas.height * 0.6 + offset);
 

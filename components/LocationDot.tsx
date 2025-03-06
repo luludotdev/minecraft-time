@@ -1,14 +1,12 @@
-import type { FC } from "react";
-
-interface Props {
+export const LocationDot = ({
+  className,
+  title,
+  onClick,
+}: {
   readonly title?: string;
   readonly className?: string;
   readonly onClick?: () => void;
-
-  readonly children?: never;
-}
-
-export const LocationDot: FC<Props> = ({ className, title, onClick }) => (
+}) => (
   <svg
     className={className}
     onClick={onClick}

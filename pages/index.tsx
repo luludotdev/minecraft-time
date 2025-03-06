@@ -1,5 +1,5 @@
 import copy from "copy-to-clipboard";
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useCallback, useRef, useState } from "react";
 import { Background } from "~/components/Background";
@@ -10,11 +10,11 @@ import { useLocation } from "~/lib/hooks/useLocation";
 import { getTime } from "~/lib/hooks/useTicks";
 import { useTooltip } from "~/lib/hooks/useTooltip";
 
-interface Props {
-  now: string;
-}
+type Props = {
+  readonly now: string;
+};
 
-const Home: NextPage<Props> = ({ now }) => {
+const Home = ({ now }: Props) => {
   const copyTextCopy = "Copy to Clipboard";
   const copyTextCopied = "Copied!";
 
@@ -87,10 +87,11 @@ const Home: NextPage<Props> = ({ now }) => {
         <title>Time in Minecraft Ticks</title>
       </Head>
 
-      <LocationPrompt enabled={enabled} onClick={toggleEnabled} />
+      <LocationPrompt isEnabled={enabled} onClick={toggleEnabled} />
       <Background sky={sky} />
 
       <p>The time is currently</p>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <p className="time" onClick={handleClick} ref={timeRef}>
         <Time initial={now} />
       </p>
