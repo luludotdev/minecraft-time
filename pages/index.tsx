@@ -23,7 +23,7 @@ const Home = ({ now }: Props) => {
   const timeTooltip = useTooltip(copyText, timeRef);
 
   const linkRef = useRef<HTMLAnchorElement>(null);
-  const linkTooltip = useTooltip("lolPants/minecraft-time", linkRef);
+  const linkTooltip = useTooltip("luludotdev/minecraft-time", linkRef);
 
   const handleClick = useCallback(() => {
     const now = getTime();
@@ -100,7 +100,7 @@ const Home = ({ now }: Props) => {
       <div className="source">
         View on{" "}
         <a
-          href="https://github.com/lolPants/minecraft-time"
+          href="https://github.com/luludotdev/minecraft-time"
           ref={linkRef}
           rel="noopener noreferrer"
           target="_blank"
