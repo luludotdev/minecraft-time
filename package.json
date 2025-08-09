@@ -11,27 +11,30 @@
     "test": "pnpm run lint"
   },
   "dependencies": {
-    "clsx": "^1.2.1",
-    "copy-to-clipboard": "^3.3.2",
-    "next": "15.2.1",
-    "next-themes": "^0.2.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "styled-jsx": "^5.0.5",
+    "clsx": "^2.1.1",
+    "copy-to-clipboard": "^3.3.3",
+    "next": "15.4.6",
+    "next-themes": "^0.4.6",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "styled-jsx": "^5.1.7",
     "suncalc": "^1.9.0"
   },
   "devDependencies": {
-    "@luludev/eslint-config": "^0.6.4",
-    "@types/node": "22.13.9",
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "@types/suncalc": "^1.8.1",
-    "eslint": "^9.21.0",
-    "prettier": "^3.5.3",
-    "typescript": "5.8.2"
+    "@luludev/eslint-config": "^0.8.0",
+    "@types/node": "24.2.1",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.7",
+    "@types/suncalc": "^1.9.2",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
+    "typescript": "5.9.2"
   },
   "pnpm": {
     "overrides": {
+      "@stylistic/eslint-plugin": "^5",
+      "@stylistic/eslint-plugin-jsx": "npm:@stylistic/eslint-plugin@^5",
+      "@stylistic/eslint-plugin-ts": "npm:@stylistic/eslint-plugin@^5",
       "@angular-eslint/eslint-plugin": "-",
       "@angular-eslint/eslint-plugin-template": "-",
       "@angular-eslint/template-parser": "-",
@@ -43,6 +46,10 @@
       "eslint-plugin-svelte3": "-",
       "eslint-plugin-vue": "-",
       "vue-eslint-parser": "-"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
