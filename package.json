@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@luludev/eslint-config": "^0.8.0",
+    "@prettier/plugin-oxc": "^0.0.4",
     "@types/node": "24.2.1",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",

@@ -15,7 +15,7 @@ import prettier from "@luludev/eslint-config/prettier";
  */
 const config = [
   {
-    ignores: ["**/dist/*", "components/ui/**/*"],
+    ignores: ["**/dist/*"],
   },
   ...common,
   ...browser,
@@ -34,9 +34,11 @@ const config = [
     },
     languageOptions: {
       parserOptions: {
-        project: "./tsconfig.json",
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
+    rules: {},
   },
 ];
 
